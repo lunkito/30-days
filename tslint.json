@@ -1,8 +1,4 @@
 {
-  "defaultSeverity": "warning",
-  "extends": [
-    "tslint:recommended"
-  ],
   "linterOptions": {
     "exclude": [
       "node_modules/**"
@@ -14,6 +10,20 @@
     "interface-name": false,
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "no-consecutive-blank-lines": false
+    "no-consecutive-blank-lines": false,
+    "arrow-parens": false,
+    "member-ordering": false,
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "no-unnecessary-initializer": true,
+    "no-unused-expression": true,
+    "no-use-before-declare": true,
+    "no-var-keyword": true,
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ]
   }
 }

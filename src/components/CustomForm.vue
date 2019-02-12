@@ -50,14 +50,14 @@ export default class CustomForm extends Vue {
   public question = true;
 
 // Lifecycle hooks
-  created() {
+  private created() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(users => {
-        const randomIndex = Math.floor(Math.random() * users.length)
+        const randomIndex = Math.floor(Math.random() * users.length);
         this.name = users[randomIndex].name;
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
   // Methods

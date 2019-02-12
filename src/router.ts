@@ -14,14 +14,19 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('./views/About.vue'),
+      path: '/watchers',
+      name: 'watchers',
+      component: () => import('./views/Watchers.vue'),
     },
     {
       path: '/form',
       name: 'form',
       component: () => import('./views/Form.vue'),
+    },
+    {
+      path: '/lifecycle',
+      name: 'lifecycle',
+      component: () => import('./views/LifecycleHooks.vue'),
     },
   ],
 });
