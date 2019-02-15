@@ -28,18 +28,28 @@
     </div>
 
     <button type="submit">Submit</button>
+
+    <pre>
+      {{ alert | json }}
+    </pre>
   </form>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-@Component
+@Component({
+  filters: {
+    json(text: string) { 
+      return JSON.stringify(text);
+    }
+  }
+})
 export default class CustomForm extends Vue {
 
 // Data
   public name = '';
-  public alert = '';
+  public alert = {};
   public subjects = [
       { id: 1, name: 'Engineer' },
       { id: 2, name: 'Biology' },
@@ -62,7 +72,12 @@ export default class CustomForm extends Vue {
 
   // Methods
   public onSubmit() {
-    this.alert = this.name;
+    this.alert = {
+      subject: this.subject,
+      name: this.name,
+      termsAndConditions: this.termsAndConditions,
+      question: this.question,
+    };
   }
 
   // Computed property
